@@ -31,7 +31,7 @@ spec:
             - name: data
               mountPath: /data
       containers:
-        - image: nginx:1.20-alpine
+        - image: centosadmin/reloadable-nginx:1.12
           name: nginx
           env:
             - name: TEST
@@ -90,6 +90,9 @@ spec:
 #            - name: data
 #              mountPath: /files
               #пример использования EmptyDir
+#            - name: data
+#              mountPath: /files
+      #        #пример использования persistentVolumeClaim
             - name: data
               mountPath: /files
       volumes:
@@ -106,11 +109,18 @@ spec:
               - path: "annotations"
                 fieldRef:
                   fieldPath: metadata.annotations
+
         #пример использования HostPath
 #        - name: data
 #          hostPath:
 #            path: /etc/kubernetes
+
         #пример использования EmptyDir
+#        - name: data
+#          emptyDir: {}
+
+        #пример использования persistentVolumeClaim
         - name: data
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: fileshare
 ...
