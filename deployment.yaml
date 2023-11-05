@@ -77,6 +77,10 @@ spec:
               mountPath: /etc/nginx/conf.d/
             - name: podinfo
               mountPath: /etc/podinfo
+              #пример использования HostPath
+#            - name: data
+#              mountPath: /files
+              #пример использования EmptyDir
             - name: data
               mountPath: /files
       volumes:
@@ -93,7 +97,11 @@ spec:
               - path: "annotations"
                 fieldRef:
                   fieldPath: metadata.annotations
+        #пример использования HostPath
+#        - name: data
+#          hostPath:
+#            path: /etc/kubernetes
+        #пример использования EmptyDir
         - name: data
-          hostPath:
-            path: /data_pod
+          emptyDir: {}
 ...
