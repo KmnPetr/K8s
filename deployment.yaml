@@ -77,6 +77,8 @@ spec:
               mountPath: /etc/nginx/conf.d/
             - name: podinfo
               mountPath: /etc/podinfo
+            - name: data
+              mountPath: /files
       volumes:
         - name: config
           configMap:
@@ -91,4 +93,7 @@ spec:
               - path: "annotations"
                 fieldRef:
                   fieldPath: metadata.annotations
+        - name: data
+          hostPath:
+            path: /data_pod
 ...
