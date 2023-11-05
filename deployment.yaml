@@ -21,6 +21,15 @@ spec:
       labels:
         app: my-app
     spec:
+      #делает предварительные настройки на поде
+      initContainers:
+        - image: busybox
+          name: mount-permissions-fix
+          #дает разрешение nginx на запись в /data
+          command: ["sh","-c","chmod 777 /data"]
+          volumeMounts:
+            - name: data
+              mountPath: /data
       containers:
         - image: nginx:1.20-alpine
           name: nginx

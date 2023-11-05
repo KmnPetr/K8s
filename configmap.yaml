@@ -16,5 +16,13 @@ data:
         return 200 'Nihao debil';
         #return 200 '$hostname\n';
       }
+      location / {
+        alias /data;
+        autoindex on;
+        client_body_temp_path /tmp;
+        dav_methods PUT DELETE MKCOL COPY MOVE;
+        create_full_put_path on;
+        dav_access user:rw group:rw all:r;
+      }
     }
 ...
