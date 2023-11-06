@@ -16,7 +16,7 @@ data:
         return 200 'Nihao debil.\n$hostname\n';
         #return 200 '$hostname\n';
       }
-      location / {
+      location /files {
         alias /data;
         autoindex on;
         client_body_temp_path /tmp;
