@@ -37,11 +37,11 @@ spec:
           env:
             - name: TEST
               value: foo
-            - name: TEST_1
-              valueFrom:
-                secretKeyRef:
-                  name: test
-                  key: test1
+#            - name: TEST_1
+#              valueFrom:
+#                secretKeyRef:
+#                  name: test
+#                  key: test1
             #здесь приведены несколько частоупотребимых Donward API
             - name: __NODE_NAME
               valueFrom:
