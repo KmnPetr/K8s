@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-deployment
+  namespace: my-namespace
 spec:
   replicas: 2
   #способ обновления реплик
