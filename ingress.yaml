@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress-nginx
+#  annotations:
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+#  ingressClassName: nginx
+  rules:
+    - host: 598224.cloud4box.ru
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-service
+                port:
+                  number: 80
+...
