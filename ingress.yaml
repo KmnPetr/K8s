@@ -10,8 +10,8 @@ spec:
     - host: 598224.cloud4box.ru
       http:
         paths:
-          - pathType: Prefix
-            path: "/"
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: my-service
