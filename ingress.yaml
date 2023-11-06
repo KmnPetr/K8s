@@ -8,7 +8,7 @@ metadata:
 spec:
 #  ingressClassName: nginx
   rules:
-    - host: 608686.cloud4box.ru
+    - host: 598224.cloud4box.ru
       http:
         paths:
           - pathType: Prefix
