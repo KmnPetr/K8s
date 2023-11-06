@@ -141,9 +141,9 @@ spec:
 #          hostPath:
 #            path: /etc/kubernetes
 
-        #пример использования EmptyDir
-#        - name: data
-#          emptyDir: {}
+#        пример использования EmptyDir
+        - name: data
+          emptyDir: {}
 
         #пример использования persistentVolumeClaim
 #        - name: data
