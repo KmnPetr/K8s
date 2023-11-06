@@ -13,7 +13,7 @@ data:
       server_name _;
       default_type text/plane;
       location / {
-        return 200 'Nihao debil';
+        return 200 'Nihao debil.\n';
         #return 200 '$hostname\n';
       }
       location / {

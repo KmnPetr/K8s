@@ -128,6 +128,11 @@ StartUp Probe пров. запустилось ли приложение. Исп
 
 SERVICES
 ClusterIP внутрикластерное взаимодействие (важно совпадение селектора и лэйблов приложений)
+
+kubectl run test --image=amouat/network-utils -it bash (небольшая утилитка для теста сетей)
+kubectl exec test -it -- bash
+
+
 NodePort открывает порты на нодах от 30000 до 3????
 LoadBalancer работает только в облаках
 ExternalName непонятно
