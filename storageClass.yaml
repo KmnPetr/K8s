@@ -1,9 +1,10 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: csi-ceph-hdd-ms1
-provisioner: csi.ceph.com
-parameters:
-  pool: ceph_pool_name
-  clusterID: ceph_cluster_id
-  type: hdd
+#  это пример от жпт, а так если сильно горит то нужно както подключать услугу диска
+#apiVersion: storage.k8s.io/v1
+#kind: StorageClass
+#metadata:
+#  name: csi-ceph-hdd-ms1
+#provisioner: csi.ceph.com
+#parameters:
+#  pool: ceph_pool_name
+#  clusterID: ceph_cluster_id
+#  type: hdd

@@ -93,8 +93,34 @@ spec:
 #            - name: data
 #              mountPath: /files
       #        #пример использования persistentVolumeClaim
-            - name: data
-              mountPath: /files
+#            - name: data
+#              mountPath: /files
+          readinessProbe:
+            failureThreshold: 3 #количество неудачных попыток
+#            exec: мозно зайти в контейнер и выполнить команду например sql запросом проверить БД
+#            tcpSocket: можно проверить работу сокета
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            successThreshold: 1 #кол.удачных попыток который сбросит счетчик неудачных попыток
+            timeoutSeconds: 1 #таймаут выполнения этой проверки
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+            initialDelaySeconds: 10 #слегка устарела после появления startUp пробы
+          startupProbe:
+            httpGet:
+              port: 80
+              path: /
+            failureThreshold: 30
+            periodSeconds: 10
+
       volumes:
         - name: config
           configMap:
@@ -120,7 +146,7 @@ spec:
 #          emptyDir: {}
 
         #пример использования persistentVolumeClaim
-        - name: data
-          persistentVolumeClaim:
-            claimName: fileshare
+#        - name: data
+#          persistentVolumeClaim:
+#            claimName: fileshare
 ...
