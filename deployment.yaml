@@ -22,14 +22,14 @@ spec:
         app: my-app
     spec:
       #делает предварительные настройки на поде
-      initContainers:
-        - image: busybox
-          name: mount-permissions-fix
-          #дает разрешение nginx на запись в /data
-          command: ["sh","-c","chmod 777 /data"]
-          volumeMounts:
-            - name: data
-              mountPath: /data
+#      initContainers:
+#        - image: busybox
+#          name: mount-permissions-fix
+#          #дает разрешение nginx на запись в /data
+#          command: ["sh","-c","chmod 777 /data"]
+#          volumeMounts:
+#            - name: data
+#              mountPath: /data
       containers:
         - image: centosadmin/reloadable-nginx:1.12
           name: nginx
