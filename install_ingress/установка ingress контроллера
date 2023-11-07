@@ -2,3 +2,17 @@ https://kubernetes.github.io/ingress-nginx/deploy/#bare-metal-clusters
 
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/baremetal/deploy.yaml
+
+kubectl get networkpolicies
+
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+
+
+
+
+   sudo iptables -A INPUT -p tcp --dport 9443 -j ACCEPT
+   sudo iptables -A INPUT -p tcp --dport 8443 -j ACCEPT
+   sudo iptables -A OUTPUT -p tcp --sport 9443 -j ACCEPT
+   sudo iptables -A OUTPUT -p tcp --sport 8443 -j ACCEPT
+
+
