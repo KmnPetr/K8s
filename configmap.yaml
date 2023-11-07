@@ -15,7 +15,6 @@ data:
       default_type text/plane;
       location / {
         return 200 'Nihao!!\n$hostname\n';
-        #return 200 '$hostname\n';
       }
       location /files {
         alias /data;
