@@ -4,10 +4,10 @@ kind: Ingress
 metadata:
   name: my-ingress-nginx
   namespace: my-namespace
-#  annotations:
-#    nginx.ingress.kubernetes.io/rewrite-target: /
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-#  ingressClassName: nginx
+  ingressClassName: nginx
   rules:
     - host: 598224.cloud4box.ru
       http:
