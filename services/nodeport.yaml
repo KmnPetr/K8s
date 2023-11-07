@@ -5,7 +5,7 @@ metadata:
   namespace: my-namespace
 spec:
   selector:
-    app: my-service
+    app: my-app
   ports:
     - protocol: TCP
       port: 80

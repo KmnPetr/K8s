@@ -5,8 +5,6 @@ metadata:
   #имя сервиса будет ip адресом сервиса
   name: my-service
   namespace: my-namespace
-  labels:
-    app: my-service
 spec:
   ports:
     - port: 80 #сюда будет приходить трафик
