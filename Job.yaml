@@ -1,0 +1,23 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: Hello
+spec:
+  #кол. попыток запуска
+  backoffLimit: 2
+  #лимит по времени
+  activeDeadlineSeconds: 60
+  template:
+    spec:
+      containers:
+        - name: Hello
+          image: quay.io/prometheus/busybox
+          args:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+      #ставим запрет на перезапуск контейнера, чтобы рестартовался под а не контейнер, чтобы все ошибки и логи можно было посмотреть на уровне пода
+      restartPolicy: Never
+
+  
