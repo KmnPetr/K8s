@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: Hello
+  name: hello
 spec:
   #кол. попыток запуска
   backoffLimit: 2
