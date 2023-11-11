@@ -16,7 +16,7 @@ spec:
           args:
             - /bin/sh
             - -c
-            - date; echo Hello from the Kubernetes cluster
+            - date; echo Hello from the Kubernetes cluster; exit 1;
       #ставим запрет на перезапуск контейнера, чтобы рестартовался под а не контейнер, чтобы все ошибки и логи можно было посмотреть на уровне пода
       restartPolicy: Never
 
