@@ -35,5 +35,11 @@ spec:
         runAsUser: 65534
       tolerations:
         - effect: NoSchedule
-          key: node-role.kubernetes.io/ingress
+          #такой указатель позволит запускать под на узле с любыми taints под эффектом NoSchedule
+          operator: Exists
+#      tolerations:
+#        - effect: NoSchedule
+#          key: node-role.kubernetes.io/ingress
+#        - effect: NoSchedule
+#          key: node-role.kubernetes.io/control-plane
 

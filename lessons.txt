@@ -246,3 +246,18 @@ Daemon Set
 Запускает поды на всех нодах кластера
 при добавлении ноды добавляет под, при удалении удаляет
 описание почти как у деплоймента, кроме количества реплик
+k get nodes --show-labels (покажет ноды со всеми лэйблами)
+k get nods -l kubernetes.io/os=linux (выберет ноды с конкретным лэйблом)
+
+    taints: (обьявляется на ноде, типа появилась зараза и все поды эвакуируются с этого узла)
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/master
+
+    tolerations: (обьявляется на поде, который имеет устойчивость к этой заразе и может быть запущен на ноде с этой заразой)
+    - effect: NoSchedule
+      operator: Exists
+      key: node-role.kubernetes.io/master
+
+k get node 608686.cloud4box.ru -o yaml (просмотр описания ноды)
+
+- effect: NoExecute вешается на те узлы, которые собираются из кластера выводиться
