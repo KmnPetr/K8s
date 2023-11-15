@@ -1,15 +1,7 @@
 Для установки Metrics Server выполните следующие шаги:
 
-1. Скачайте манифесты установки Metrics Server:
-```bash
-git clone https://github.com/kubernetes-sigs/metrics-server
-```
+https://github.com/kubernetes-sigs/metrics-server (гит с документашкой инструкция по установке в ридми файлике)
 
-2. Перейдите в каталог манифестов:
-```bash
-cd metrics-server
-```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
-3. Примените манифесты кластера:
-```bash
-kubectl apply -f deploy/1.8+
+короч надо ssl настроить сначала
