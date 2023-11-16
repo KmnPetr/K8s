@@ -4,7 +4,7 @@ kind: Service
 metadata:
   #имя сервиса будет ip адресом сервиса
   name: my-service
-  namespace: my-namespace
+  namespace: default
 spec:
   ports:
     - port: 80 #сюда будет приходить трафик
