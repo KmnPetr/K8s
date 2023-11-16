@@ -1,0 +1,19 @@
+Установка helm. Документашка: https://helm.sh/docs/intro/install/
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+helm version
+
+Дальше по документашке установки серт менеджера:
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+
+устанавливаем серт, внимание на последнюю строчку
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --version v1.13.2 \
+  --set installCRDs=true
+
+  k get pod -n cert-manager
+  дискрайбы вроде говорят что все норм
+
