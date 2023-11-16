@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: my-configmap-env
-  namespace: my-namespace
+  namespace: default
 data:
   dbhost: "postgresql"
   DEBAG: "false"
