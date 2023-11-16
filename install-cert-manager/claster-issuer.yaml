@@ -1,0 +1,9 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: my-cluster-issuer
+spec:
+  my:
+    email: kmn.petrichenko@yandex.ru
+    server: https://598224.cloud4box.ru
+    secretName: ssl-key-pair
