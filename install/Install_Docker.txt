@@ -60,7 +60,6 @@
 
                         9) распакуем скачанный Go файл https://go.dev/doc/install
 
-                         (первая часть команды не обязательна)
                          rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz
 
                         (export PATH=$PATH:/usr/local/go/bin)  (исправленные комманды вводить их)
@@ -71,7 +70,8 @@
 
                         # Run these commands as root
 
-                        cd cri-dockerd
+                        cd cri-dockerd   >>>>>
+                        /////////////////////
                         apt install make(если нужно)
                         make cri-dockerd
 
@@ -82,7 +82,7 @@
                         systemctl daemon-reload
                         systemctl enable --now cri-docker.socket
 
-                        ARCH=amd64 make cri-dockerd    //короче ебень полная этот cri
+                        ARCH=amd64 make cri-dockerd    //короче хрень полная этот cri
 
 
 

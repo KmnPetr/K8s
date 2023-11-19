@@ -1,0 +1,5 @@
+vim ~/.bashrc
+добавим строку
+alias k=kubectl
+перезапустим скрипт
+source ~/.bashrc
