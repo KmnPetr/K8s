@@ -30,5 +30,5 @@ spec:
           {{- range $key, $val := .Values.env }}
             - name: {{ $key | quote }}
               value: {{ $val | quote }}
-          {{ end }}
+          {{- end }}
 {{- end }}
