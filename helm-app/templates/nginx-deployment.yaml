@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: {{.Chart.Name}}-{{.Release.Name}}
   labels:
-    app: nginx
+    app: {{.Chart.Name}}-{{.Release.Name}}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: nginx
+      app: {{.Chart.Name}}-{{.Release.Name}}
   template:
     metadata:
       labels:
-        app: nginx
+        app: {{.Chart.Name}}-{{.Release.Name}}
     spec:
       containers:
-        - name: nginx
+        - name: {{.Chart.Name}}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
           ports:
-            - containerPort: 80
+            - containerPort: {{ .Values.port}}
