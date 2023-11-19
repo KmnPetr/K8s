@@ -25,10 +25,10 @@ spec:
             - containerPort: {{ .Values.port}}
           resources:
 {{toYaml .Values.resources | indent 12}}
-{{ if .Values.env}}
+{{- if .Values.env}}
           env:
-          {{ range $key, $val := .Values.env }}
+          {{- range $key, $val := .Values.env }}
             - name: {{ $key | quote }}
               value: {{ $val | quote }}
           {{ end }}
-{{ end }}
+{{- end }}
