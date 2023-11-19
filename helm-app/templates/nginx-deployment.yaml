@@ -20,4 +20,4 @@ spec:
           ports:
             - containerPort: {{ .Values.port}}
           resources:
-            {{toYaml .Values.resources}}
+{{toYaml .Values.resources | indent 10}}
