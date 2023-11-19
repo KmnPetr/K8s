@@ -4,6 +4,10 @@ metadata:
   name: {{.Chart.Name}}-{{.Release.Name}}
   labels:
     app: {{.Chart.Name}}-{{.Release.Name}}
+{{ if .Values.annotations}}
+  annotations:
+{{ .Values.annotations | indent 4 }}
+{{ end }}
 spec:
   replicas: {{ .Values.replicas | default 1}}
   selector:
@@ -20,4 +24,4 @@ spec:
           ports:
             - containerPort: {{ .Values.port}}
           resources:
-{{toYaml .Values.resources | indent 10}}
+{{toYaml .Values.resources | indent 12}}
