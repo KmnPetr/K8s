@@ -3,3 +3,5 @@ vim ~/.bashrc
 alias k=kubectl
 перезапустим скрипт
 source ~/.bashrc
+
+Добавление автокомпита https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/#дополнительная-конфигурация-kubectl
